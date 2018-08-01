@@ -1,0 +1,36 @@
+<ion-menu [content]="mainContent">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>
+        Menu
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content id="side-menu21">
+    <ion-list id="menu-list1">
+      <ion-item color="none" id="menu-list-item4">
+        <ion-avatar item-left>
+          <img />
+        </ion-avatar>
+        <h2>
+          Item
+        </h2>
+      </ion-item>
+      <ion-item color="none" menuClose="" on-click="goToInicio()" id="menu-list-item1">
+        Inicio
+      </ion-item>
+      <ion-item color="none" menuClose="" on-click="goToBSqueda()" id="menu-list-item2">
+        Búsqueda
+      </ion-item>
+      <ion-item color="none" menuClose="" on-click="goToConfiguraciN()" id="menu-list-item3">
+        Configuración
+      </ion-item>
+    </ion-list>
+    <div class="spacer" style="width:268px;height:201px;" id="menu-spacer4"></div>
+    <button id="menu-button4" ion-button color="light" block style="color:#EB3232;" menuClose="" on-click="goToIniciarSesiN()">
+      Cerrar Sesión
+    </button>
+  </ion-content>
+</ion-menu>
+
+<ion-nav #mainContent [root]="rootPage"></ion-nav>
