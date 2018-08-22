@@ -1,12 +1,14 @@
 <ion-menu [content]="mainContent">
+  
   <ion-header>
-    <ion-toolbar>
+    <ion-toolbar color="primary">
       <ion-title>
         Menu
       </ion-title>
     </ion-toolbar>
   </ion-header>
   <ion-content id="side-menu21">
+      <img src="https://fututel.com/images/tutorials/noticias-pitalito-fututel.png">
     <ion-list id="menu-list1">
       <ion-item color="none" id="menu-list-item4">
         <ion-avatar item-left>
@@ -17,17 +19,17 @@
         </h2>
       </ion-item>
       <ion-item color="none" menuClose="" on-click="goToInicio()" id="menu-list-item1">
-        Inicio
+        <ion-icon name="home"></ion-icon> Inicio
       </ion-item>
       <ion-item color="none" menuClose="" on-click="goToBSqueda()" id="menu-list-item2">
-        Búsqueda
+        <ion-icon name="search"></ion-icon> Búsqueda
       </ion-item>
       <ion-item color="none" menuClose="" on-click="goToConfiguraciN()" id="menu-list-item3">
-        Configuración
+        <ion-icon name="settings"></ion-icon> Configuración 
       </ion-item>
     </ion-list>
     <div class="spacer" style="width:268px;height:201px;" id="menu-spacer4"></div>
-    <button id="menu-button4" ion-button color="light" block style="color:#EB3232;" menuClose="" on-click="goToIniciarSesiN()">
+    <button id="menu-button4" ion-button color="danger" block style="color:rgb(255, 255, 255);" menuClose="" on-click="goToIniciarSesiN()">
       Cerrar Sesión
     </button>
   </ion-content>
