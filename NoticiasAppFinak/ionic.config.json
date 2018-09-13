@@ -1,0 +1,7 @@
+{
+  "name": "NoticiasAppFinak",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
