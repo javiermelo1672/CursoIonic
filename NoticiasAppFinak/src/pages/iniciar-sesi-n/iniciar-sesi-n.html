@@ -9,17 +9,17 @@
         <ion-label>
           Correo
         </ion-label>
-        <ion-input type="email" placeholder=""></ion-input>
+        <ion-input type="email" [(ngModel)]="userobject.email" name="Correo" placeholder=""></ion-input>
       </ion-item>
       <ion-item id="iniciarSesiN-input2">
         <ion-label>
           Contraseña
         </ion-label>
-        <ion-input type="password" placeholder=""></ion-input>
+        <ion-input type="password" [(ngModel)]="userobject.password" name="Contraseña" placeholder=""></ion-input>
       </ion-item>
     </ion-list>
     <div class="spacer" style="height:40px;" id="iniciarSesiN-spacer1"></div>
-    <button id="iniciarSesiN-button1" ion-button color="positive" block on-click="goToInicio()">
+    <button id="iniciarSesiN-button1" ion-button color="positive" block on-click="loginFunction(userobject)">
       Iniciar Sesión
     </button>
     <button id="iniciarSesiN-button2" ion-button clear color="positive" block on-click="goToCrearUsuario()">
