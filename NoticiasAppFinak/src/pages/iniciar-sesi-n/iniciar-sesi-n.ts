@@ -7,6 +7,8 @@ import {AngularFireAuth} from "angularfire2/auth";
 import {TabsControllerPage} from '../tabs-controller/tabs-controller';
 import {UserAuthModel} from '../models/user-auth-model';
 import {LoadingController}  from 'ionic-angular';
+import {AlertController} from 'ionic-angular';
+
 @Component({
   selector: 'page-iniciar-sesi-n',
   templateUrl: 'iniciar-sesi-n.html'
@@ -15,20 +17,27 @@ export class IniciarSesiNPage {
   // this tells the tabs component which Pages
   // should be each tab's root Page
   userobject={} as UserAuthModel;
-  constructor(public navCtrl: NavController,private loadinCtrl:LoadingController, private authFirebase:AngularFireAuth) {
+  constructor(public alertCtrl:AlertController,public navCtrl: NavController,private loadingCtrl:LoadingController, private authFirebase:AngularFireAuth) {
   }
   
   loginFunction(userobject:UserAuthModel)
   {
-    try{
-      this.authFirebase.auth.signInWithEmailAndPassword(userobject.email,userobject.password);
-      this.navCtrl.push(InicioPage);
-      console.log("Has iniciado sesión");
-    }
-    catch(e)
-    {
-      console.log("Ups ha habido un error");
-    }
+   
+     let alertadeerror=this.alertCtrl.create({
+       title:'¡Ups algo ha salido mal!',
+       subTitle:'Revisa tus credenciales',
+       buttons:['Aceptar']
+
+     });
+     const cargando=this.loadingCtrl.create({
+       content:"Estamos Inciando sesión"
+     });
+
+     cargando.present().then(()=>this.authFirebase.auth.signInWithEmailAndPassword(userobject.email,userobject.password).then(res =>this.navCtrl.push(TabsControllerPage)&&cargando.dismiss()).catch(error=>alertadeerror.present()&&cargando.dismiss())).catch(error=>cargando.dismiss());
+      
+      
+     
+    
     
 
   }

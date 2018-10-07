@@ -22,6 +22,11 @@ import {AngularFireDatabaseModule} from 'angularfire2/database';
 import {AngularFireStorageModule} from 'angularfire2/storage';
 import {AngularFirestoreModule} from 'angularfire2/firestore';
 import {AngularFireAuthModule} from 'angularfire2/auth';
+
+
+//Aquí s eimporta los servicios
+import {UserService} from '../services/user-service';
+import {NoticiasService} from '../services/noticias-service'
 @NgModule({
   declarations: [
     MyApp,
@@ -61,7 +66,9 @@ import {AngularFireAuthModule} from 'angularfire2/auth';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    UserService,
+    NoticiasService
   ]
 })
 export class AppModule {}

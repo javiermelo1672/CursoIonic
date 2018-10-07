@@ -10,16 +10,19 @@
     Noticias principales
   </h4>
   <div id="inicio-container1">
+
     <ion-list id="inicio-list3">
-      <ion-item color="none" id="inicio-list-item2">
-        <ion-thumbnail item-left>
-          <img />
-        </ion-thumbnail>
+      <ion-item  *ngFor="let itemsnoticias of noticiasreference$ |async "color="none" id="inicio-list-item2">
+        
+          <img src="{{itemsnoticias.imagen}}"/>
+        
         <h2>
-          Item
+          <h1>{{itemsnoticias.titulo}}</h1>
+          <h3>{{itemsnoticias.encabezado}}</h3>
         </h2>
       </ion-item>
     </ion-list>
+
   </div>
   <h4 id="inicio-heading2" style="color:#000000;font-weight:400;text-align:center;">
     Noticias de la app

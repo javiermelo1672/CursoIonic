@@ -7,12 +7,12 @@
 </ion-header>
 <ion-content padding id="page4">
   <ion-list id="configuraciN-list5">
-    <ion-item color="none" on-click="goToEditarUsuario()" id="configuraciN-list-item7">
+    <ion-item  *ngFor="let itemsusuario of userreference$ | async" color="none" on-click="goToEditarUsuario()" id="configuraciN-list-item7">
       <ion-avatar item-left>
-        <img />
+        <img src="{{itemsusuario.foto}}"/>
       </ion-avatar>
       <h2>
-        Item
+        {{itemsusuario.nombre}}
       </h2>
     </ion-item>
   </ion-list>

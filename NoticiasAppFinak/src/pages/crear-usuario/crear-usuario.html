@@ -12,31 +12,31 @@
         <ion-label>
           Nombre
         </ion-label>
-        <ion-input type="text" placeholder=""></ion-input>
+        <ion-input type="text" [(ngModel)]="userdb.nombre" name="Nombre" placeholder=""></ion-input>
       </ion-item>
       <ion-item id="crearUsuario-input4">
         <ion-label>
           Correo
         </ion-label>
-        <ion-input type="email" placeholder=""></ion-input>
+        <ion-input type="email" [(ngModel)]="userauth.email" name="Correo" placeholder=""></ion-input>
       </ion-item>
       <ion-item id="crearUsuario-input5">
         <ion-label>
           Contraseña
         </ion-label>
-        <ion-input type="text" placeholder=""></ion-input>
+        <ion-input type="text" [(ngModel)]="userauth.password" name="Contraseña" placeholder=""></ion-input>
       </ion-item>
       <ion-item id="crearUsuario-input6">
         <ion-label>
           Edad
         </ion-label>
-        <ion-input type="number" placeholder=""></ion-input>
+        <ion-input type="number" [(ngModel)]="userdb.edad" name="Edad" placeholder=""></ion-input>
       </ion-item>
       <ion-item id="crearUsuario-select1">
         <ion-label>
           Sexo
         </ion-label>
-        <ion-select name="">
+        <ion-select [(ngModel)]="userdb.sexo" name="Sexo" placeholder="">
           <ion-option>
             Hombre
           </ion-option>
@@ -51,6 +51,13 @@
           </ion-option>
         </ion-select>
       </ion-item>
+
+      <ion-item id="crearUsuario-input7">
+        <ion-label>
+          Foto
+        </ion-label>
+        <ion-input type="text" [(ngModel)]="userdb.foto" name="Foto" placeholder=""></ion-input>
+      </ion-item>
     </ion-list>
     <div id="crearUsuario-markdown1" style="text-align:center;" class="show-list-numbers-and-dots">
       <p style="color:#000000;">
@@ -59,7 +66,7 @@
         </strong>
       </p>
     </div>
-    <button id="crearUsuario-button3" ion-button color="positive" block>
+    <button id="crearUsuario-button3"  (click)="CrearUsuario(userauth,userdb)" ion-button color="positive" block>
       Crear usuario
     </button>
   </form>
